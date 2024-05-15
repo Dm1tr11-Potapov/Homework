@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./2-MGV-2_Potapov_DS_Homework_1.js"></script> -->
+</head>
+<body>
+Homework_1
+    <script type="text/javascript">
+        alert("Задание №1");
+        function digitSum(x) {
+            if (x >= 0) return x.length;
+            else return (x.length-1);
+        }
+        function firstDigit(x) {
+            if (x >=0) return String(num[0]);
+            else return String(num[1]);
+        }
+        let num; 
+            do{
+                num = prompt( "Введите целое число" );
+                if (isNaN(num)) {
+                    console.log( "Введено не число" );
+                    alert( "Введено не число" );                    
+                }
+                if ((num[0]) == undefined) {
+                    console.log( "Введена пустая строка" );
+                    alert( "Введена пустая строка" );
+                }
+            } while (isNaN(num) || (num[0]) == undefined);
+        console.log(num);
+        console.log("Количество цифр в числе =",digitSum(num));
+        console.log("Первая цифра числа =",firstDigit(num));                                         //<- Это конец первой задачи
+
+//         abc = prompt( "Введите строку" );
+//         let y = abc.length;
+//         console.log("Введённая строка = ",abc);
+//         console.log("Длина строки =",y);
+//         console.log("Последний символ =", String(abc[y-1]));
+//         console.log("Вывод с помощью Do, while")
+//         let u = y-1;
+//         do{
+//             console.log(abc[u]);
+//             u = u-1;
+//         }
+//         while (u >= 0);
+//         console.log("Вывод с помощью for")
+//         for (let z = y-1; z >= 0 ; z = z-1) {
+//     console.log(abc[z]);
+// };                                                                                                //<- Это конец вывода строки с конца, но не каждый второй символ, а все
+        alert("Задание №2");
+        abc = prompt( "Введите строку" );
+        let y = abc.length;
+        console.log("Введённая строка = ",abc);
+        console.log("Длина строки =",y);
+        console.log("Последний символ =", String(abc[y-1]));
+        if (y > 50) {
+            alert ("Зачем так много символов!")
+        }
+        let u = y-1;
+        do{
+            if (u % 2 == 1) {
+                console.log(abc[u]);
+            }
+            u = u-1;                        
+        }
+        while (u >= 0);                                              //<- Это конец второй задачи, для проверки прикольно вводить 1а2б3ы4р5в6а7л8г, получится главрыба
+        
+        alert("Задание №3");
+        let arr = [
+            [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            [10, 20, 30, 40, 50]
+        ];
+        const arr1 = arr.slice(0,1);
+        console.log(arr1);
+        const arr2 = arr.slice(1);
+        console.log(arr2);
+        console.log("Длина массива =", arr1.length)
+        let x = 0;
+        let i = 0;
+        do {
+            x = x + arr1[0][i]**2;
+            i = i+1;
+            console.log("Сумма =", x);
+            console.log("Элемент массива №1,",i);
+        }
+        while (i <= arr1[0].length-1);
+        i = 0;
+        do {
+            x = x + arr2[0][i]**2;
+            i = i+1;
+            console.log("Сумма =",x);
+            console.log("Элемент массива №2,",i);
+        }
+        while (i <= arr2[0].length-1);
+        console.log("Сумма квадратов элементов всего массива =",x);       //<- Это конец третьей задачи
+    </script>
+</body>
+</html>
+
+<!-- Задача 1.
+Запросить у пользователя число, выведите в консоль:
+- количество разрядов (цифр) в этом числе
+- первую цифру этого числа.
+- сообщение об ошибке, если введеная пользователем информация не является числом
+
+Задача 2.
+пользователь вводит строку.
+Вывести на консоль каждый воторой символ строки, начиная с последнего
+
+Задача 3.
+Дан двухмерный массив с числами (задается в тексте программы). Найдите сумму квадратов элементов этого массива. -->
