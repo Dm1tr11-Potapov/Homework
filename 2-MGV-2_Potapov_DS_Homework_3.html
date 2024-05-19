@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1> {{ title }} </h1>
+        <input
+            style="margin: 10px;"
+            type="number"
+            placeholder="км/ч"
+            v-model="inputValue"
+            v-on:input="changeInputValueHandler1"
+        >
+        <label>км/ч</label>
+        <input 
+            style="margin: 10px;"
+            type="number"
+            placeholder="м/с"
+            v-model="inputValue1"
+            v-on:input="changeInputValueHandler"
+        >
+        <label>м/с</label>
+        <h4> Скорость в км/ч:{{ inputValue }} </h4>
+        <h4> Скорость в м/с:{{ inputValue1 }} </h4>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- <script src="2-MGV-2_Potapov_DS_Homework_3.js"></script> -->
+    <script>
+        const App = {
+    data() {
+        return {
+            title: 'Перевод скорости из км/ч в м/с',
+            inputValue:"",
+            inputValue1:"",    
+        }
+    },
+    methods: {
+        changeInputValueHandler(event) {
+            this.inputValue = (event.target.value)*3.6;            
+            },   
+        changeInputValueHandler1(event) {
+            this.inputValue1 = (event.target.value)/3.6;
+        }
+    }
+}
+
+Vue.createApp(App).mount('#app')
+    </script>
+   
+</body>
+</html>
